@@ -1,88 +1,539 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Njeru Brian Mwenda | Full-Stack Developer & ICT Specialist</title>
 
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Styles and Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="style.css" />
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LMHJ6QWRX2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-LMHJ6QWRX2');
+  </script>
+
+  <!-- Google Translate -->
+ <!-- Google Translate Script -->
+<script>
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    includedLanguages: 'sw,en,fr,es,de,zh-CN,ar,hi', // Key languages
+    layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL,
+    autoDisplay: false // Prevents auto-popup
+  }, 'google_translate_element');
+  // Style the dropdown
+  setTimeout(() => {
+    const select = document.querySelector(".goog-te-combo");
+    select.style.padding = "8px 12px";
+    select.style.borderRadius = "4px";
+    select.style.border = "1px solid #6c5ce7";
+  }, 500);
+}
+</script>
 </head>
 <body>
-  <header class="header text-center py-3">
-    <div class="container">
-      <h1 class="name">Njeru Brian Mwenda</h1>
-      <p class="title">Full-Stack Developer | ICT Specialist | Software Engineer</p>
-      <p class="contact">
-        📞 +254 717 677 103 |
-        📧 brianmwenda05@gmail.com |
-        🌐 <a href="https://evbrian.github.io/link" target="_blank">evbrian.github.io/link</a>
-      </p>
-    </div>
-  </header>
+  <!-- Google Translate Widget -->
+    <div id="google_translate_element"></div
 
-  <main class="main-content container">
-    <section id="about" class="profile-section my-5">
-      <div class="row align-items-center">
-        <div class="col-md-4 text-center mb-3 mb-md-0">
-          <img src="profile.jpeg" alt="Njeru Brian Mwenda" class="img-fluid rounded shadow-sm" style="max-height: 300px;">
-        </div>
-        <div class="col-md-8">
-          <h2 class="section-title">About Me</h2>
-          <p class="section-description">
-            Motivated and detail-oriented Bachelor of Science in Applied Computer Science student at Chuka University, passionate about software development, web technologies, and database management. Demonstrated ability to develop efficient, scalable, and user-friendly applications with a strong focus on continuous learning and collaboration.
-          </p>
-          <a href="cv.pdf" download class="btn btn-primary mt-2">📄 Download CV</a>
-        </div>
+  <div class="portfolio-container">
+    <header class="header">
+      <button id="theme-toggle" class="theme-btn">
+        <i class="fas fa-moon"></i>
+      </button>
+      <div class="hero">
+  <h1>Njeru Brian Mwenda</h1>
+  <p class="tagline">Full-Stack Developer & ICT Specialist</p>
+  
+  <!-- Download Resume -->
+  <a href="CURRICULUM VITAE.pdf" download class="resume-btn" onclick="notifyDownload()">
+    <i class="fas fa-download"></i> Download Resume
+  </a>
+
+  <!-- View Resume -->
+  <a href="CURRICULUM VITAE.pdf" target="_blank" class="resume-btn">
+    <i class="fas fa-eye"></i> View Resume
+  </a>
+
+  <!-- Notification -->
+  <p id="download-msg" style="display:none; color: green; font-weight: bold; margin-top: 10px;">
+    ✅ CV download initiated. Check your downloads folder.
+  </p>
+</div>
+    </header>
+
+    <main class="main-content">            <!-- About Section -->
+            <section id="about" class="profile-section">
+                <div class="profile-pic">
+                    <img src="IMG_7192 (Edited).JPG" alt="Njeru Brian Mwenda">
+                </div>
+                <div class="profile-info">
+                    <h2>About Me</h2>
+                    <p>
+                        I'm a passionate Full-Stack Developer and ICT Specialist with expertise in building responsive web applications and maintaining robust network infrastructure. With a strong foundation in both development and technical support, I bridge the gap between software solutions and hardware implementation.
+                    </p>
+                    <p>
+                        My approach combines technical precision with creative problem-solving to deliver comprehensive digital solutions that are both user-friendly and technically sound.
+                    </p>
+                    <div class="education">
+                        <h3>Education</h3>
+                        <p><strong>Chuka University</strong> - BSc in Applied Computer Science</p>
+                        <p><strong>Murang'a University</strong> - Internship Program</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills" class="skills-section">
+                <h2>My Skills</h2>
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <h3><i class="fas fa-code"></i> Technical Skills</h3>
+                        <!-- Skill Bars -->
+                        <div class="skill-bar-container">
+                            <div class="skill-bar">
+                                <div class="skill-name">HTML5/CSS3</div>
+                                <div class="skill-level" data-level="95%"></div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-name">JavaScript</div>
+                                <div class="skill-level" data-level="90%"></div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-name">React</div>
+                                <div class="skill-level" data-level="85%"></div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-name">Node.js</div>
+                                <div class="skill-level" data-level="80%"></div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-name">Python</div>
+                                <div class="skill-level" data-level="75%"></div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-name">Networking</div>
+                                <div class="skill-level" data-level="85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class="fas fa-users"></i> Soft Skills</h3>
+                        <ul>
+                            <li>Problem-Solving & Critical Thinking</li>
+                            <li>Effective Communication</li>
+                            <li>Team Collaboration</li>
+                            <li>Adaptability & Continuous Learning</li>
+                            <li>Time Management</li>
+                            <li>Attention to Detail</li>
+                            <li>Project Management</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="projects-section">
+                <h2>Featured Projects</h2>
+                <!-- Project Filters -->
+                <div class="project-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="web">Web Development</button>
+                    <button class="filter-btn" data-filter="network">Networking</button>
+                    <button class="filter-btn" data-filter="ict">ICT Solutions</button>
+                </div>
+              <div class="projects-carousel-wrapper">
+  <button class="project-nav prev"><i class="fas fa-chevron-left"></i></button>
+  <div class="projects-grid" id="projectsCarousel">
+                <div class="projects-grid">
+                    <div class="project-card" data-category="web">
+                        <h3>E-Commerce Website</h3>
+                        <p>A full-stack e-commerce platform with React frontend and Node.js backend</p>
+                        <div class="tech-used">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                        </div>
+                        <a href="https://evbrian.github.io/Shopping/" class="project-link view-project-btn">View Project</a>
+                    </div>
+                  <!-- Aviator Project -->
+<div class="project-card" data-category="web">
+  <h3>Aviator Gambling Game</h3>
+  <p>An online gambling game where users enter their phone number and are prompted to enter their M-PESA PIN to deposit money for gameplay.</p>
+  <div class="tech-used">
+    <span>HTML</span>
+    <span>JavaScript</span>
+    <span>PHP</span>
+    <span>M-PESA API</span>
+  </div>
+  <a href="https://evbrian.github.io/Aviator/" class="project-link view-project-btn">View Project</a>
+</div>
+
+<!-- School System Project -->
+<div class="project-card" data-category="ict">
+  <h3>School Web System for Teachers</h3>
+  <p>A digital platform built for schools to manage teachers, attendance, performance, and communication efficiently.</p>
+  <div class="tech-used">
+    <span>HTML</span>
+    <span>CSS</span>
+    <span>JavaScript</span>
+    <span>PHP</span>
+    <span>MySQL</span>
+  </div>
+  <a href="https://evbrian.github.io/brianmwenda/" class="project-link view-project-btn">View Project</a>
+</div>
+
+                    <div class="project-card" data-category="network">
+                        <h3>Network Monitoring Tool</h3>
+                        <p>A Python-based application for network performance analysis</p>
+                        <div class="tech-used">
+                            <span>Python</span>
+                            <span>Flask</span>
+                            <span>SQLite</span>
+                        </div>
+                        <a href="#" class="project-link view-project-btn">View Project</a>
+                    </div>
+                    <div class="project-card" data-category="ict">
+                        <h3>IT Helpdesk System</h3>
+                        <p>A ticketing system for ICT support teams</p>
+                        <div class="tech-used">
+                            <span>HTML/CSS</span>
+                            <span>JavaScript</span>
+                            <span>PHP</span>
+                        </div>
+                        <a href="#" class="project-link view-project-btn">View Project</a>
+                    </div>
+                </div>
       </div>
-    </section>
 
-    <section id="skills" class="my-5">
-      <h2 class="section-title">Skills</h2>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">✔️ Microsoft Office</li>
-        <li class="list-group-item">✔️ Data Analysis</li>
-        <li class="list-group-item">✔️ Web Development (HTML, CSS, JavaScript)</li>
-        <li class="list-group-item">✔️ GUI Development (Java Swing, React)</li>
-        <li class="list-group-item">✔️ Software Development (Java, Python, C++)</li>
-        <li class="list-group-item">✔️ Database Management (MySQL, SQLite, PostgreSQL)</li>
-      </ul>
-    </section>
+  <button class="project-nav next"><i class="fas fa-chevron-right"></i></button>
+</div>
+            </section>
 
-    <section id="education" class="my-5">
-      <h2 class="section-title">Education</h2>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">
-          <strong>Chuka University</strong><br />
-          Bachelor of Science in Applied Computer Science<br />
-          2022 – 2026
-        </li>
-        <li class="list-group-item">
-          <strong>St. Paul Kiamboa Secondary School</strong><br />
-          KCSE – 2021
-        </li>
-      </ul>
-    </section>
-
-    <section id="contact" class="my-5">
-      <h2 class="section-title">Contact</h2>
-      <p><strong>Address:</strong> P.O. Box 96-60103, Runyenjes</p>
-      <p><strong>Phone:</strong> +254 717 677 103</p>
-      <p><strong>Email:</strong> <a href="mailto:brianmwenda05@gmail.com">brianmwenda05@gmail.com</a></p>
-      <p><strong>GitHub:</strong> <a href="https://github.com/evbrian" target="_blank">evbrian</a></p>
-    </section>
-  </main>
-
-  <footer class="footer bg-light text-center py-3">
-    <div class="container">
-      <p class="mb-0">&copy; 2025 Njeru Brian Mwenda. All rights reserved.</p>
+            <!-- Testimonials Section -->
+        <section class="testimonials-section">
+  <h2>What People Say</h2>
+  <div class="testimonial-carousel">
+    <div class="testimonial active">
+      <p>"Brian delivered exceptional work on our web project. His attention to detail and problem-solving skills were impressive."</p>
+      <div class="client-info">
+        <div class="client-name">John Doe</div>
+        <div class="client-title">CTO, Tech Solutions Ltd</div>
+      </div>
     </div>
-  </footer>
+    <div class="testimonial">
+      <p>"His networking expertise helped us resolve critical infrastructure issues that had been plaguing our systems for months."</p>
+      <div class="client-info">
+        <div class="client-name">Jane Smith</div>
+        <div class="client-title">IT Director, University</div>
+      </div>
+    </div>
+    <div class="testimonial">
+      <p>"Brian's frontend designs are both visually appealing and highly functional. Highly recommend working with him."</p>
+      <div class="client-info">
+        <div class="client-name">Samuel Karanja</div>
+        <div class="client-title">Lead Designer, SoftCom</div>
+      </div>
+    </div>
+    <div class="testimonial">
+      <p>"We trusted Brian with our backend systems and he optimized our database and API performance beyond expectations."</p>
+      <div class="client-info">
+        <div class="client-name">Ann Wanjiku</div>
+        <div class="client-title">DevOps Engineer, CloudTech</div>
+      </div>
+    </div>
 
-  <!-- Bootstrap JS Bundle -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Move controls OUTSIDE of testimonial divs -->
+    <div class="carousel-controls">
+      <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+      <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </div>
+</section>
+
+      <!--Testmonial Form-->
+<section class="testimonial-form-toggle" style="text-align: center; margin-top: 4rem;">
+  <h2 style="color: var(--primary); font-size: 2rem; margin-bottom: 1.5rem;">
+    We'd Love to Hear Your Feedback 💬
+  </h2>
+
+  <button id="formToggleBtn" style="
+    background: linear-gradient(135deg, var(--accent), var(--primary));
+    color: white;
+    background-color: black;
+    padding: 0.9rem 2rem;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.05rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  ">
+    <i class="fas fa-comment-dots"></i> Leave a Testimonial
+  </button>
+
+  <div id="formContainer" style="display: none; margin-top: 2rem;">
+    <iframe 
+      src="https://docs.google.com/forms/d/e/1FAIpQLSdaGEEy3TdfT223d8xW0dTf7ZhmIbF7QmUML9xArApjXs_pNg/viewform?embedded=true" 
+      width="100%" 
+      height="500" 
+      frameborder="0" 
+      marginheight="0" 
+      marginwidth="0"
+      style="max-width: 600px; border-radius: 12px; box-shadow: 0 4px 18px rgba(0,0,0,0.5); margin: auto;">
+      Loading…
+    </iframe>
+  </div>
+</section>
+
+            <!-- Experience Section -->
+            <section id="experience" class="experience-section">
+                <h2>Professional Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">2023 - Present</div>
+                        <div class="timeline-content">
+                            <h3>ICT Intern - Murang'a University</h3>
+                            <ul>
+                                <li>Provided technical support for university staff and students</li>
+                                <li>Assisted in network maintenance and troubleshooting</li>
+                                <li>Developed small web applications for departmental use</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2022</div>
+                        <div class="timeline-content">
+                            <h3>Freelance Web Developer</h3>
+                            <ul>
+                                <li>Built responsive websites for small businesses</li>
+                                <li>Implemented SEO best practices</li>
+                                <li>Provided ongoing maintenance and support</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Chat Toggle Button -->
+    <div class="chat-toggle" id="chatToggle">
+        <i class="fas fa-comment-dots fa-lg"></i>
+    </div>
+    <div id="chat-loading" style="display: none; position: fixed; bottom: 80px; right: 20px; color: gray; font-size: 14px;">
+  Loading chat...
+</div>
+
+
+    </main>
+  <footer class="footer">
+  <div class="footer-content">
+    <div class="footer-social">
+  <a href="https://wa.me/254717677103" target="_blank">WhatsApp <i class="fab fa-whatsapp"></i></a>
+  <a href="https://m.me/100086645200721" target="_blank">Facebook <i class="fab fa-facebook-f"></i></a>
+  <a href="https://instagram.com/yourprofile" target="_blank">Instagram <i class="fab fa-instagram"></i></a>
+  <a href="https://github.com/Evbrian" target="_blank">Github <i class="fab fa-github"></i></a>
+  <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn <i class="fab fa-linkedin-in"></i></a>
+  <a href="https://twitter.com/yourhandle" target="_blank">Twitter <i class="fab fa-twitter"></i></a>
+</div>
+    
+    <p>
+      <i class="fas fa-envelope"></i> brianmwenda05@gmail.com
+      <i class="fas fa-phone"></i> +254 717677103
+      <i class="fas fa-map-marker-alt"></i> Nairobi, Kenya
+    </p>
+    
+    <p>&copy; <span id="year"></span> Njeru Brian Mwenda. All rights reserved.</p>
+  </div>
+</footer>
+  </div>
+
+  <!-- Utility Scripts -->
+  <script>
+    // Dynamic Year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    function notifyDownload() {
+    const msg = document.getElementById("download-msg");
+    msg.style.display = "block";
+
+    // Optionally hide the message after a few seconds
+    setTimeout(() => {
+      msg.style.display = "none";
+    }, 5000);
+  }
+
+ // Attach toggle handler AFTER the button is rendered
+  document.addEventListener("DOMContentLoaded", function () {
+    const button = document.getElementById("formToggleBtn");
+    const form = document.getElementById("formContainer");
+
+    button.addEventListener("click", function () {
+      const isVisible = form.style.display === "block";
+      form.style.display = isVisible ? "none" : "block";
+      button.innerHTML = isVisible 
+        ? '<i class="fas fa-comment-dots"></i> Leave a Testimonial' 
+        : '<i class="fas fa-times"></i> Hide Form';
+    });
+  });
+/*Testmonials*/
+  const testimonials = document.querySelectorAll('.testimonial');
+  const prevBtn = document.querySelector('.prev-btn');
+  const nextBtn = document.querySelector('.next-btn');
+  let currentIndex = 0;
+
+  function showTestimonial(index) {
+    testimonials.forEach((testimonial, i) => {
+      testimonial.classList.toggle('active', i === index);
+    });
+  }
+
+  prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+    showTestimonial(currentIndex);
+  });
+
+  nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % testimonials.length;
+    showTestimonial(currentIndex);
+  });
+
+  // Initialize
+  showTestimonial(currentIndex);
+
+  // Auto swipe every 4 seconds
+  let autoSwipeInterval;
+
+  function autoSwipeTestimonials() {
+    autoSwipeInterval = setInterval(() => {
+      currentIndex = (currentIndex + 1) % testimonials.length;
+      showTestimonial(currentIndex);
+    }, 2000);
+  }
+
+  autoSwipeTestimonials();
+
+    document.addEventListener('DOMContentLoaded', function() {
+  const socialContainer = document.querySelector('.footer-social');
+  
+  if (window.innerWidth <= 767 && socialContainer) {
+    const socialLinks = socialContainer.querySelectorAll('a');
+    const containerWidth = socialContainer.offsetWidth;
+    let linksWidth = 0;
+    
+    // Calculate total width of all links
+    socialLinks.forEach(link => {
+      linksWidth += link.offsetWidth + 10; // 10px for gap
+    });
+    
+    // Only animate if content overflows
+    if (linksWidth > containerWidth) {
+      socialContainer.style.position = 'relative';
+      
+      // Create animation style
+      const style = document.createElement('style');
+      style.textContent = `
+        @keyframes autoScroll {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(calc(${containerWidth}px - ${linksWidth}px)); }
+        }
+        .footer-social a {
+          animation: autoScroll ${linksWidth/50}s linear infinite alternate;
+        }
+      `;
+      document.head.appendChild(style);
+    }
+  }
+});
+    
+    // Theme Toggle
+    // Theme Toggle (Fixed)
+document.getElementById("theme-toggle").addEventListener("click", function () {
+  document.body.classList.toggle("dark-mode"); // ✅ This matches your CSS
+  const icon = this.querySelector("i");
+  icon.classList.toggle("fa-sun");
+  icon.classList.toggle("fa-moon");
+
+  // Store preference
+  const theme = document.body.classList.contains("dark-mode") ? "light" : "dark";
+  localStorage.setItem("theme", theme);
+});
+
+// Load stored theme on page load
+window.addEventListener("DOMContentLoaded", () => {
+  const storedTheme = localStorage.getItem("theme");
+  if (storedTheme === "light") {
+    document.body.classList.add("dark-mode");
+    const icon = document.getElementById("theme-toggle").querySelector("i");
+    icon.classList.remove("fa-moon");
+    icon.classList.add("fa-sun");
+  }
+});
+
+    // Skill Bars
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll(".skill-level").forEach(level => {
+        const width = level.getAttribute("data-level");
+        level.style.width = width;
+        level.style.backgroundColor = "#6c5ce7";
+        level.style.height = "8px";
+        level.style.borderRadius = "5px";
+      });
+    });
+
+/* Add this just before the closing */
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+  }
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+
+<!-- Tawk.to Script with Manual Toggle -->
+<script type="text/javascript">
+  var Tawk_API = Tawk_API || {};
+  var Tawk_LoadStart = new Date();
+
+  (function () {
+    var s1 = document.createElement("script");
+    s1.async = true;
+    s1.src = "https://embed.tawk.to/68779df6a461ff191259224e/1j09k23mm";
+    s1.charset = "UTF-8";
+    s1.setAttribute("crossorigin", "*");
+    var s0 = document.getElementsByTagName("script")[0];
+    s0.parentNode.insertBefore(s1, s0);
+  })();
+
+  // Set up the toggle button when Tawk is ready
+  const chatButton = document.getElementById("chatToggle");
+const chatLoading = document.getElementById("chat-loading");
+chatLoading.style.display = "block";
+
+const checkTawkReady = setInterval(() => {
+  if (typeof Tawk_API !== "undefined" && typeof Tawk_API.toggle === "function") {
+    clearInterval(checkTawkReady);
+    chatLoading.style.display = "none";
+    chatButton.addEventListener("click", () => {
+      Tawk_API.toggle();
+    });
+  }
+}, 300);
+</script>
 </body>
 </html>
