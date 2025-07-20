@@ -803,7 +803,6 @@ body {
   flex-wrap: nowrap;
   overflow-x: auto;
   gap: 12px;
-  padding: 10px;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
 }
@@ -812,11 +811,9 @@ body {
   flex: 0 0 auto;
   white-space: nowrap;
   padding: 8px 16px;
-  background: #333;
-  color: #fff;
   border-radius: 6px;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 12px;
   display: flex;
   align-items: center;
   gap: 6px;
