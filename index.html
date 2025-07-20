@@ -340,20 +340,16 @@ function googleTranslateElementInit() {
 
     </main>
   <footer class="footer">
-  <div class="footer-content">
+<div class="footer-content">
     <div class="footer-social">
-  <a href="https://wa.me/254717677103" target="_blank">WhatsApp <i class="fab fa-whatsapp"></i></a>
-  <a href="https://m.me/100086645200721" target="_blank">Facebook <i class="fab fa-facebook-f"></i></a>
-  <a href="https://instagram.com/yourprofile" target="_blank">Instagram <i class="fab fa-instagram"></i></a>
-  <a href="https://github.com/Evbrian" target="_blank">Github <i class="fab fa-github"></i></a>
-  <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn <i class="fab fa-linkedin-in"></i></a>
-  <a href="https://twitter.com/yourhandle" target="_blank">Twitter <i class="fab fa-twitter"></i></a>
-</div>
-
-    <div class="language-switcher">
-      <button data-lang="en">EN</button>
-      <button data-lang="sw">SW</button>
+      <a href="https://wa.me/254717677103" target="_blank">WhatsApp <i class="fab fa-whatsapp"></i></a>
+      <a href="https://m.me/100086645200721" target="_blank">Facebook <i class="fab fa-facebook-f"></i></a>
+      <a href="https://instagram.com/yourprofile" target="_blank">Instagram <i class="fab fa-instagram"></i></a>
+      <a href="https://github.com/Evbrian" target="_blank">GitHub <i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn <i class="fab fa-linkedin-in"></i></a>
+      <a href="https://twitter.com/yourhandle" target="_blank">Twitter <i class="fab fa-twitter"></i></a>
     </div>
+  </div>
 
     <p>
       <i class="fas fa-envelope"></i> brianmwenda05@gmail.com
@@ -362,7 +358,6 @@ function googleTranslateElementInit() {
     </p>
     
     <p>&copy; <span id="year"></span> Njeru Brian Mwenda. All rights reserved.</p>
-  </div>
 </footer>
   </div>
 
@@ -430,6 +425,16 @@ function googleTranslateElementInit() {
   }
 
   autoSwipeTestimonials();
+
+    const container = document.querySelector('.footer-social');
+  let scrollAmount = 0;
+  setInterval(() => {
+    scrollAmount += 1;
+    if (scrollAmount >= container.scrollWidth - container.clientWidth) {
+      scrollAmount = 0;
+    }
+    container.scrollLeft = scrollAmount;
+  }, 30); // Adjust speed here (smaller = faster)
     // Theme Toggle
     // Theme Toggle (Fixed)
 document.getElementById("theme-toggle").addEventListener("click", function () {
