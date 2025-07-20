@@ -340,7 +340,7 @@ function googleTranslateElementInit() {
 
     </main>
   <footer class="footer">
-<div class="footer-content">
+  <div class="footer-content">
     <div class="footer-social">
       <a href="https://wa.me/254717677103" target="_blank">WhatsApp <i class="fab fa-whatsapp"></i></a>
       <a href="https://m.me/100086645200721" target="_blank">Facebook <i class="fab fa-facebook-f"></i></a>
@@ -350,7 +350,7 @@ function googleTranslateElementInit() {
       <a href="https://twitter.com/yourhandle" target="_blank">Twitter <i class="fab fa-twitter"></i></a>
     </div>
   </div>
-
+  
     <p>
       <i class="fas fa-envelope"></i> brianmwenda05@gmail.com
       <i class="fas fa-phone"></i> +254 717677103
@@ -426,7 +426,7 @@ function googleTranslateElementInit() {
 
   autoSwipeTestimonials();
 
-  const container = document.querySelector('.footer-social');
+const container = document.querySelector('.footer-social');
   let scrollAmount = 0;
   setInterval(() => {
     scrollAmount += 1;
@@ -435,8 +435,8 @@ function googleTranslateElementInit() {
     }
     container.scrollLeft = scrollAmount;
   }, 30); // Adjust speed here (smaller = faster)
+
     // Theme Toggle
-    // Theme Toggle (Fixed)
 document.getElementById("theme-toggle").addEventListener("click", function () {
   document.body.classList.toggle("dark-mode"); // ✅ This matches your CSS
   const icon = this.querySelector("i");
