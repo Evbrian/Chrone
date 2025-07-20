@@ -798,36 +798,50 @@ body {
     /*font-size: 0.9rem !important; /* Optional: Reduce text size */
   }
 
-  /* Social Media Links in Footer */
-  .footer-social {
+ .footer {
+  background: #111;
+  color: #fff;
+  padding: 10px 0;
+  overflow: hidden;
+}
+
+.footer-content {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.footer-social {
   display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  gap: 12px;
-  padding: 10px;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  background: #f8f8f8;
+  gap: 20px;
+  white-space: nowrap;
+  animation: scrollLeft 20s linear infinite;
 }
 
 .footer-social a {
-  flex: 0 0 auto;
-  white-space: nowrap;
-  padding: 8px 16px;
-  background: #333;
+  display: inline-block;
   color: #fff;
-  border-radius: 6px;
   text-decoration: none;
+  padding: 5px 15px;
   font-size: 14px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
+  border-radius: 4px;
+  transition: background 0.3s;
+  background: #333;
 }
 
-/* Optional: Hide scroll bar for Webkit browsers */
-.footer-social::-webkit-scrollbar {
-  display: none;
+.footer-social a:hover {
+  background: #555;
 }
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
 
  h2 {
   font-size: 1.5rem !important;  /* ~24px at 16px base */
