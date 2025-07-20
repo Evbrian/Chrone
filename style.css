@@ -15,6 +15,13 @@ body.dark-mode {
     color: var(--light);
 }
 
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
 body {
     background-color: #ffffff; /* white background */
@@ -30,6 +37,7 @@ body {
     margin: 0 auto;
     padding: 0 2rem;
 }
+
 /* Header */
 .header {
     text-align: center;
@@ -54,6 +62,29 @@ body {
     font-size: 1.3rem;
     opacity: 0.8;
     font-weight: 300;
+}
+.goog-te-menu-frame {
+  position: absolute !important;
+  top: 60px !important;
+  z-index: 999999 !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+.skiptranslate iframe {
+  display: block !important;
+}
+
+body > .skiptranslate {
+  display: none !important;
+}
+
+#google_translate_element {
+  position: relative;
+  z-index: 999;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
 }
 
 /* Theme Toggle Button Position and Style */
@@ -295,6 +326,28 @@ body {
 .footer-social a:nth-child(5) { background-color: #0077b5; } /* LinkedIn */
 .footer-social a:nth-child(6) { background-color: #1da1f2; } /* Twitter */
 
+
+/* Language Switcher (if used) */
+.language-switcher {
+    margin-top: 1.25rem;
+}
+
+.language-switcher button {
+    background: transparent;
+    color: #cbd5e0;
+    border: 1px solid #4a5568;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    margin: 0 0.25rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.8rem;
+}
+
+.language-switcher button:hover {
+    background: rgba(255,255,255,0.05);
+    color: white;
+}
 
 /* Resume Button */
 .resume-btn {
@@ -627,349 +680,199 @@ body {
     background: var(--accent);
 }
 
-/* ===== Remove ALL Google Branding & Default Styling ===== */
-/*hide google branding*/
-.goog-te-banner-frame,
-.goog-logo-link,
-.goog-te-gadget-icon{
-  display: none !important;
-}
-.goog-te-banner-frame.skiptranslate {
-  display: none !important;
-}
 
-body {
-  top: 0px !important;
-  position: relative !important;
-  overflow-x: hidden !important;
-}
-
-html {
-  overflow-x: hidden !important;
-}
-
-.goog-te-gadget {
-  font-size: 8px; /* hides "Powered by Google" text */
-}#goog-gt-tt, .goog-te-balloon-frame {
-  display: none !important;
-}
-
-.goog-text-highlight {
-  background: none !important;
-  box-shadow: none !important;
-}
-/*new*/
-.goog-te-banner-frame, 
-.goog-logo-link, 
-.goog-te-gadget-icon,
-.goog-te-gadget, 
-.goog-te-combo, 
-.goog-te-menu-value span {
-  display: none !important;
-}
-
-/* Reset Google Translate's layout shift */
-body { 
-  top: 0 !important; 
-}
-
- ===== Custom Dropdown Styling ===== */
-.goog-te-combo {
-  /* Your custom design */
-  padding: 8px 12px;
-  border-radius: 4px;
-  border: 1px solid #6c5ce7;
-  background: white;
-  color: #333;
-  font-family: 'DM Sans', sans-serif;
-  cursor: pointer;
-  appearance: none; /* Removes default dropdown arrow on some browsers */
-  -webkit-appearance: none;
-  width: 100%; /* Responsive width */
-  max-width: 200px; /* Desktop max width */
-  transition: all 0.3s ease;
-}
-
-/* Hover effect */
-.goog-te-combo:hover {
-  border-color: #a29bfe;
-  box-shadow: 0 0 0 2px rgba(108, 92, 231, 0.1);
-}
-
-/* ===== Mobile Responsiveness ===== */
-@media (max-width: 600px) {
-  .goog-te-combo {
-    max-width: 150px; /* Slimmer on mobile */
-    font-size: 12px;
-    padding: 6px 10px;
-  }
-}
-
-/* Fix language list popup (optional) */
-.goog-te-menu-frame {
-  max-width: 100% !important;
-  width: 100% !important;
-}
-/* ===== Mobile-First Adjustments (max-width: 767px) ===== */
-@media (max-width: 767px) {
-body { 
- font-size: 12px; 
-} 
-  /*font sizes*/
-  /* Header */
-  .hero h1 {
-    font-size: 1.8rem !important; /* Scales with <body> */
-  }
-  .tagline {
-    font-size: 0.7rem !important;
-  }
-  /* About Section */
-  .profile-info h2 {
-    font-size: 1.5rem !important;
-  }
-  .profile-info p {
-    font-size: 0.9rem !important;
+}@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+    padding: 0 1rem;
   }
 
-  /* Social Media Links */
-  .footer-social a {
-    font-size: 0.8rem !important;
+  .header {
+    padding: 2.5rem 1rem 2rem;
   }
 
-  /* Testimonials */
-  .testimonial p {
-    font-size: 0.75rem !important;
+  .header h1 {
+    font-size: 1.8rem;
   }
-  .client-name, .client-title {
-    font-size: 0.65rem !important;
+
+  .header p {
+    font-size: 1rem;
   }
-/* Mobile: Stack image & text vertically */
+
   .profile-section {
-    flex-direction: column !important;
-    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
   }
-  
- 
+
   .profile-pic {
-    margin: 0 auto 2rem !important;
-    max-width: 200px !important;
-    border-radius: 50% !important; /* Ensures circular image on mobile */
+    width: 160px;
+    height: 160px;
   }
-  
+
   .profile-info {
-    width: 100% !important;
-    padding: 0 1rem !important;
-  }
-  /* Project Descriptions */
- .project-filters {
-  display: flex !important;
-  flex-wrap: nowrap !important; /* Force single line */
-  overflow-x: auto !important; /* Enable horizontal scroll if needed */
-  gap: 8px !important; /* Space between buttons */
-  padding-bottom: 4px !important; /* For scrollbar space */
-  -webkit-overflow-scrolling: touch !important; /* Smooth iOS scroll */
-}
-
-/* Hide scrollbar visually (optional) */
-.project-filters::-webkit-scrollbar {
-  display: none !important;
-}
-
-.filter-btn {
-  flex-shrink: 0 !important; /* Prevent button squishing */
-  white-space: nowrap !important; /* Keep button text in one line */
-}
-  .project-card p {
-    font-size: 0.7rem !important;
-  }
-  .project-card h3 {
-    font-size: 0.9rem !important;
-  }
-  /* Skills */
-  .skills-container {
-    grid-template-columns: 1fr !important;
-    gap: 30px;
+    padding: 1.2rem;
+    width: 100%;
   }
 
-.testimonial-form-toggle h2 {
-    font-size: 1.4rem !important; /* Reduced from 2rem */
-    margin-bottom: 1rem !important;
+  .skills-section h2,
+  .contact-section h2,
+  .projects-section h2 {
+    font-size: 1.5rem;
   }
-  
-  #formToggleBtn {
-    font-size: 0.85rem !important; /* Reduced from 1.05rem */
-    padding: 0.7rem 1.5rem !important;
-    gap: 8px !important;
+
+  .skills-container,
+  .contact-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
   }
- 
+
+  .skill-category {
+    padding: 1rem;
+    min-width: 90%;
+  }
+
+  .skill-category h3 {
+    font-size: 1.2rem;
+  }
+
+  .skill-category li {
+    font-size: 0.95rem;
+  }
+
+  .contact-links a {
+    width: 100%;
+    justify-content: center;
+    font-size: 0.95rem;
+  }
+
   /* Projects */
   .projects-grid {
-    grid-template-columns: 1fr !important;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+    padding: 1rem 0;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
   }
-  
-  .project-nav {
-    display: none !important;
+
+  .project-card {
+    flex: 0 0 85%;
+    max-width: 85%;
+    scroll-snap-align: start;
+    margin: 0 auto;
+  }
+
+  .view-project-btn {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
   }
 
   /* Testimonials */
-  .testimonial-carousel {
-    padding: 0 15px;
+  .testimonial-form-section,
+  .testimonials-section {
+    padding: 2rem 1rem;
   }
-  
-  .carousel-controls {
-    position: static;
-    margin-top: 20px;
+
+  .testimonial {
+    font-size: 0.9rem;
+    padding: 1rem;
+  }
+
+  .testimonial-form-section h2,
+  .testimonials-section h2 {
+    font-size: 1.4rem;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 2rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  .footer-social {
+    flex-wrap: wrap;
     justify-content: center;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
   }
 
-  /* Experience Timeline */
-  .timeline-item {
-    flex-direction: column;
-  }
-  
-  .timeline-date {
-    width: 100%;
-    margin-bottom: 10px;
-    text-align: left;
-  }
-
- /* CV Buttons in Hero */
-  .hero .resume-btn {
-    display: inline-block !important; /* Prevents full-width */
-    width: auto !important; 
-    padding: 0.6rem 1.2rem !important; /* Smaller padding */
-    margin: 0 0.5rem 0.5rem 0 !important; /* Tight spacing */
-    /*font-size: 0.9rem !important; /* Optional: Reduce text size */
-  }
-
-  /* Social Media Links in Footer */
-   .footer-social {
-    display: flex !important;
-    flex-wrap: nowrap !important;
-    overflow: hidden !important; /* Hide scrollbar */
-    gap: 10px !important;
-    width: 100%;
-    font-size:12px;
-  }
-  
   .footer-social a {
-    flex: 0 0 auto !important;
-    padding: 6px 12px !important;
-    white-space: nowrap !important;
-  }
- h2 {
-  font-size: 1.5rem !important;  /* ~24px at 16px base */
-  line-height: 1.3 !important;
-  margin-bottom: 1rem !important;
-}
-}
-
-/* ===== Tablet (768px - 1023px) ===== */
-@media (min-width: 768px) and (max-width: 1023px) {
-  /* Projects Grid */
-  .projects-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-/* Tablet: Reduce image size slightly */
-  .profile-pic {
-    max-width: 180px !important;
-    margin-right: 2rem !important;
-  }
-  /* Skills */
-  .skills-container {
-    grid-template-columns: 1fr 1fr !important;
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
   }
 
-  /* Testimonials */
-  .testimonial-carousel {
-    max-width: 80%;
-    margin: 0 auto;
+  .footer-content p {
+    font-size: 0.75rem;
+    margin: 0.5rem 0;
   }
- .hero .resume-btn {
-    padding: 0.7rem 1.4rem !important;
+
+  .language-switcher button {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
   }
-  .footer-social a {
-    padding: 0.5rem 1rem !important;
+
+  /* Chat */
+  .chat-dialog {
+    width: 95%;
+    right: 2.5%;
+  }
+
+  .chat-toggle {
+    width: 50px;
+    height: 50px;
+    bottom: 20px;
+    right: 20px;
   }
 }
 
-/* ===== Desktop (min-width: 1024px) ===== */
-@media (min-width: 1024px) {
-  /* Project Carousel */
-  .projects-carousel-wrapper {
-    position: relative;
-  }
-  
-  .project-nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 2;
-  }
-  
-  .project-nav.prev {
-    left: -40px;
-  }
-  
-  .project-nav.next {
-    right: -40px;
-  }
-
-  /* Testimonial Controls */
-  .carousel-controls {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    justify-content: space-between;
-    transform: translateY(-50%);
-  }
-}
-
-/* ===== Large Desktop (min-width: 1200px) ===== */
-@media (min-width: 1200px) {
-  /* Project Grid */
-  .projects-grid {
-    grid-template-columns: repeat(3, 1fr) !important;
-  }
-}
-
-/* ===== Ultra-Wide Screens (min-width: 1600px) ===== */
-@media (min-width: 1600px) {
-  .portfolio-container {
-    max-width: 1500px;
-    margin: 0 auto;
-  }
-}
-
-/* ===== Print Styles ===== */
-@media print {
-  .chat-toggle,
-  .project-nav,
-  .theme-btn,
-  #google_translate_element {
-    display: none !important;
-  }
-  
+@media (max-width: 480px) {
   body {
-    padding: 20px;
-    color: #000 !important;
-    background: #fff !important;
+    font-size: 13px;
   }
-  
-  a {
-    text-decoration: none !important;
-    color: #000 !important;
+
+  .header h1 {
+    font-size: 1.5rem;
+  }
+
+  .header p {
+    font-size: 0.85rem;
+  }
+
+  .profile-pic {
+    width: 140px;
+    height: 140px;
+  }
+
+  .project-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .project-card p {
+    font-size: 0.85rem;
+  }
+
+  .view-project-btn {
+    font-size: 0.75rem;
+  }
+
+  .footer-content p {
+    font-size: 0.7rem;
+  }
+
+  .footer-social a {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.6rem;
   }
 }
-
-/* Desktop: Reset to original layout */
-/*@media (min-width: 1024px) {
-  .profile-section {
-    display: flex !important;
-    align-items: center !important;
-  }
-  
-  .profile-pic {
-    flex-shrink: 0 !important; /* Prevents image from shrinking */
- /* }
-}*/
+.projects-section::after {
+  content: 'Swipe →';
+  text-align: center;
+  display: block;
+  font-size: 0.8rem;
+  opacity: 0.6;
+  margin-top: -0.5rem;
+  color: #ccc;
+}
