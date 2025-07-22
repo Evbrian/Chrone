@@ -38,19 +38,20 @@
       font-family: Arial, sans-serif;
     }
 
-    /* Hide Google Translate top banner */
-    .goog-te-banner-frame.skiptranslate {
-      display: none !important;
-    }
+
     body {
       top: 0px !important;
     }
-
-    /* Hide 'powered by Google' */
-    .goog-logo-link, .goog-te-gadget span {
+   /* Hide Google Translate UI */
+    .goog-te-banner-frame.skiptranslate,
+    .goog-te-gadget,
+    .goog-logo-link,
+    .goog-te-gadget span {
       display: none !important;
     }
-
+   iframe[style*="z-index: 999999"] {
+      display: none !important;
+    }
     /* Optional: Hide iframe border */
     iframe {
       border: none !important;
