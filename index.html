@@ -25,10 +25,9 @@
 
   <!-- Google Translate -->
 <style>
-    #google_translate_element {
+   #google_translate_element {
       text-align: center;
-      margin-top: 40px;
-      margin-right:50px;
+      margin-top: 20px;
     }
     .goog-te-combo {
       padding: 8px 12px;
@@ -36,16 +35,25 @@
       border: 1px solid #6c5ce7;
       margin: 10px auto;
       display: block;
+      font-family: Arial, sans-serif;
     }
 
-    /* Optional: Hide Google Toolbar */
-    .goog-te-banner-frame.skiptranslate,
-    .goog-logo-link,
-    .goog-te-gadget span {
+    /* Hide Google Translate top banner */
+    .goog-te-banner-frame.skiptranslate {
       display: none !important;
     }
     body {
       top: 0px !important;
+    }
+
+    /* Hide 'powered by Google' */
+    .goog-logo-link, .goog-te-gadget span {
+      display: none !important;
+    }
+
+    /* Optional: Hide iframe border */
+    iframe {
+      border: none !important;
     }
   </style>
 </head>
