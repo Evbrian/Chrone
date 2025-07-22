@@ -633,7 +633,15 @@ body {
 .chat-input button:hover {
     background: var(--accent);
 }
-
+.goog-te-banner-frame, .skiptranslate, [src*="translate.google"] {
+  display: none !important;
+  height: 0 !important;
+  visibility: hidden !important;
+}
+body {
+  top: 0 !important;
+  margin-top: 0 !important;
+}
 /* ===== Mobile-First Adjustments (max-width: 767px) ===== */
 @media (max-width: 767px) {
 body { 
