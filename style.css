@@ -380,13 +380,13 @@ body {
   font-weight: 600;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
-
 .projects-grid {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-  gap: 2rem;
-  justify-content: center;
-  overflow: hidden;
+  display: flex; /* CHANGED from grid */
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 1rem;
+  scroll-snap-type: x mandatory;
 }
 
 .project-card {
@@ -405,11 +405,6 @@ body {
   display: none;
 }
 
-.projects-grid {
-  
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;     /* Firefox */
-}
 
 
 .project-card h3 {
