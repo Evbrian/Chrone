@@ -456,11 +456,11 @@ document.addEventListener("DOMContentLoaded", () => {
     scrollToProject(projectIndex);
   });
 
-  // Optional: auto-scroll every few seconds
-  // setInterval(() => {
-  //   projectIndex = (projectIndex + 1) % projectCards.length;
-  //   scrollToProject(projectIndex);
-  // }, 5000);
+  //  auto-scroll every few seconds
+   setInterval(() => {
+     projectIndex = (projectIndex + 1) % projectCards.length;
+     scrollToProject(projectIndex);
+   }, 3000);
 });
 
     
