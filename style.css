@@ -342,10 +342,10 @@ body {
 
 /* Projects Section */
 .projects-section {
-    background: var(--darker);
+    background: white;
     padding: 4rem 2rem;
     border-radius: 12px;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
 }
 
 .project-filters {
