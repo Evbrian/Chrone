@@ -342,6 +342,9 @@ body {
 
 /* Projects Section */
 .projects-section {
+    background: var(--darker);
+    padding: 4rem 2rem;
+    border-radius: 12px;
     margin-bottom: 4rem;
 }
 
@@ -541,6 +544,29 @@ body {
 }
 
 .carousel-controls button:hover {
+    background: var(--accent);
+}
+
+
+/*project controls*/
+.carousel-project-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.carousel-project-controls button {
+    background: var(--primary);
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.carousel-project-controls button:hover {
     background: var(--accent);
 }
 
