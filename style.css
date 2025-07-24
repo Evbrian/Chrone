@@ -11,8 +11,23 @@
 
 /* Dark theme overrides */
 body.dark-mode {
- background-color: var(--dark);
+  --primary: #6c5ce7;
+    --dark: #121212;
+    --darker: #0a0a0a;
+    --light: #e0e0e0;
+    --lighter: #ffffff;
+    --accent: #fd79a8;
+   background-color: var(--dark);
     color: var(--light);
+    line-height: 1.6;
+    min-height: 100vh;
+    position: relative; /* Added for translate dropdown positioning */
+}
+
+/* Elements inside dark mode */
+body.dark-mode .testimonial {
+  background-color: var(--dark); /* dark background */
+  color: var(--light); /* light text */
 }
 
 /* Base Styles */
@@ -327,19 +342,8 @@ body {
 
 /* Projects Section */
 .projects-section {
-  margin-bottom: 4rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    margin-bottom: 4rem;
 }
-
-.carousel-controls.projects-controls {
-  margin-top: 2rem; /* already there, you can adjust */
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-
 
 .project-filters {
     text-align: center;
@@ -380,23 +384,25 @@ body {
   font-weight: 600;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
+
 .projects-grid {
-  display: flex; /* CHANGED from grid */
-  gap: 1.5rem;
+  display: flex;
   overflow-x: auto;
-  scroll-behavior: smooth;
-  padding-bottom: 1rem;
   scroll-snap-type: x mandatory;
+  gap: 2rem;
+  padding-bottom: 1rem;
+  scroll-behavior: smooth;
 }
 
 .project-card {
-  min-width: 300px;
-  max-width: 300px;
-  flex-shrink: 0;
+  flex: 0 0 300px; /* Fixed width */
+  scroll-snap-align: start;
   background: var(--darker);
-  padding: 1rem;
+  padding: 1.5rem;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: transform 0.3s ease;
 }
 .project-card:hover {
     transform: translateY(-6px);
@@ -405,6 +411,10 @@ body {
   display: none;
 }
 
+.projects-grid {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
 
 
 .project-card h3 {
@@ -434,11 +444,6 @@ body {
     background: var(--primary);
     transform: translateY(-2px);
 }
-.projects-carousel-wrapper {
-  text-align: center;
-  margin-top: 2rem;
-}
-
 
 /* Testimonials */
 .testimonial-form-section {
@@ -643,20 +648,103 @@ body {
 .chat-input button:hover {
     background: var(--accent);
 }
-.goog-te-banner-frame, .skiptranslate, [src*="translate.google"] {
+/* Google translate*/
+/* Center container */
+   /* .translate-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+ .goog-te-combo {
+      padding: 8px 12px;
+      border-radius: 4px;
+      border: 1px solid #6c5ce7;
+      margin: 10px auto;
+      display: block;
+      font-family: Arial, sans-serif;
+    }
+
+    /* ✅ Hide top banner injected via iframe */
+  /*  .goog-te-banner-frame.skiptranslate {
+      display: none !important;
+    }
+
+    /* Hide iframe that shows the "Translated to..." popup */
+ /*   iframe[style*="z-index: 999999"] {
+      display: none !important;
+    }*/
+
+.translate-wrapper {
+  display: flex;
+  justify-content: center; /* center horizontally */
+  align-items: center;     /* center vertically */
+  gap: 8px;                /* spacing between dropdown and "Powered by Google" */
+  margin-top: 20px;
+  flex-wrap: wrap;         /* responsive wrapping on small screens */
+}
+
+.goog-te-combo {
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid #6c5ce7;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+/* Ensure "Powered by Google" appears on same line */
+.goog-logo-link {
+  display: inline-block !important;
+  font-size: 12px !important;
+  text-decoration: none !important;
+  color: #888 !important;
+  font-family: Arial, sans-serif !important;
+}
+
+.goog-te-banner-frame { 
+    display: none !important; 
+  }
+  body { 
+    top: 0 !important; /* Prevents page jump */ 
+  }
+
+/* ✅ Hide top banner */
+.goog-te-banner-frame.skiptranslate {
   display: none !important;
-  height: 0 !important;
-  visibility: hidden !important;
 }
-body {
-  top: 0 !important;
-  margin-top: 0 !important;
+
+/* ✅ Hide bottom right popup after translating */
+iframe[style*="z-index: 999999"] {
+  display: none !important;
 }
+
+/* ✅ Optional: Responsive styling for mobile */
+@media (max-width: 600px) {
+  .translate-wrapper {
+    flex-direction: column;
+    gap: 6px;
+  }
+}
+
+
 /* ===== Mobile-First Adjustments (max-width: 767px) ===== */
 @media (max-width: 767px) {
 body { 
  font-size: 12px; 
 } 
+  /*.translate-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+ .goog-te-combo {
+      padding: 8px 12px;
+      border-radius: 4px;
+      border: 1px solid #6c5ce7;
+      margin: 10px auto;
+      display: block;
+      font-family: Arial, sans-serif;
+    }
+*/
   /*font sizes*/
   /* Header */
   .hero h1 {
@@ -781,13 +869,11 @@ body {
 
   .timeline-date {
     font-weight: bold;
-    color: #666;
     margin-bottom: 10px;
   }
 
   .timeline-content {
     padding: 10px 15px;
-    background-color: #f9f9f9;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     font-size: 14px;
@@ -816,6 +902,10 @@ body {
     /*font-size: 0.9rem !important; /* Optional: Reduce text size */
   }
 
+  /* Social Media Links in Footer */
+    .footer{
+    margin: -18px;
+    }
  .footer-social {
   display: flex;
   flex-wrap: nowrap;
@@ -841,7 +931,7 @@ body {
 .footer-social::-webkit-scrollbar {
   display: none;
 }
-
+  
  h2 {
   font-size: 1.5rem !important;  /* ~24px at 16px base */
   line-height: 1.3 !important;
@@ -877,3 +967,84 @@ body {
     padding: 0.5rem 1rem !important;
   }
 }
+
+/* ===== Desktop (min-width: 1024px) ===== */
+/*@media (min-width: 1024px) {
+  /* Project Carousel */
+/*  .projects-carousel-wrapper {
+    position: relative;
+  }
+  
+  .project-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+  }
+  
+  .project-nav.prev {
+    left: -40px;
+  }
+  
+  .project-nav.next {
+    right: -40px;
+  }
+
+  /* Testimonial Controls */
+  /*.carousel-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    justify-content: space-between;
+    transform: translateY(-50%);
+  }
+}
+
+/* ===== Large Desktop (min-width: 1200px) ===== */
+/**@media (min-width: 1200px) {
+  /* Project Grid */
+ /* .projects-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+/* ===== Ultra-Wide Screens (min-width: 1600px) ===== */
+/*@media (min-width: 1600px) {
+  .portfolio-container {
+    max-width: 1500px;
+    margin: 0 auto;
+  }
+}
+
+/* ===== Print Styles ===== */
+/*@media print {
+  .chat-toggle,
+  .project-nav,
+  .theme-btn,
+  #google_translate_element {
+    display: none !important;
+  }
+  
+  body {
+    padding: 20px;
+    color: #000 !important;
+    background: #fff !important;
+  }
+  
+  a {
+    text-decoration: none !important;
+    color: #000 !important;
+  }
+}
+
+/* Desktop: Reset to original layout */
+/*@media (min-width: 1024px) {
+  .profile-section {
+    display: flex !important;
+    align-items: center !important;
+  }
+  
+  .profile-pic {
+    flex-shrink: 0 !important; /* Prevents image from shrinking */
+ /* }
+}*/
